@@ -1,0 +1,47 @@
+<div class="row">
+  <div class="col-12 mb-3 mt-3 text-center">
+    <h4 class="sub-title">Categorias mas vistas</h4>
+  </div>
+  <div class="category-container">
+    <div *ngIf="categories.length === 0; else elseBlock">
+      Vaya, se ha presentado un incoveniente
+    </div>
+    <ng-template #elseBlock>
+      <div
+        *ngFor="let category of categories"
+        class="col-3 active pointer"
+        routerLink="/search"
+        [queryParams]="{ category: category.idCategory }"
+      >
+        {{ category.name }}
+      </div>
+    </ng-template>
+  </div>
+  <div class="col-12 mt-4">
+    <div class="hero text-light">
+      <img src="assets/img/hero_search.svg" />
+      <div>
+        <h3>
+          Buscas un producto y no lo encuentras?, En Shope tenemos ese producto
+          que tanto deseas
+        </h3>
+        <button class="btn text-light" routerLink="/search">
+          Da click para encontrar lo que buscas
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-12">
+    <h4 class="mb-3 mt-3 sub-title text-center">Nuestras marcas</h4>
+    <div class="container-marks">
+      <div class="row">
+        <div *ngFor="let mark of marks" class="col-4">
+          <div class="card mb-3 pointer">
+            <div class="img"></div>
+            <div class="card-title sub-title">{{ mark.name }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

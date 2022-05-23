@@ -1,0 +1,20 @@
+<div class="product-grid" *ngIf="products.length > 0; else elseBlock">
+  <div *ngFor="let product of products" class="card shadow-sm">
+    <div class="img-container">
+      <img (click)="openDialog(product)" class="no-bg" src="assets/img/noimage.png" />
+    </div>
+    <h5 class="text" (click)="openDialog(product)">{{ product.name }}</h5>
+    <h6 class="text">Impuesto: {{ product.taxes | currency }}</h6>
+    <div class="d-flex justify-content-between align-items-center">
+      <h5 class="text">{{ product.price | currency }}</h5>
+    </div>
+  </div>
+</div>
+<ng-template #elseBlock>
+  <div class="text-center mt-3">
+    <h6 class="text-b">
+      No se encontraron productos para tu
+      <span class="text-orange">búsqueda.</span>
+    </h6>
+  </div>
+</ng-template>

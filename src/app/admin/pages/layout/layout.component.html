@@ -1,0 +1,16 @@
+<div id="wrapper">
+  <app-admin-sidebar></app-admin-sidebar>
+  <div id="content-wrapper" className="d-flex flex-column">
+    <div id="content">
+      <app-admin-navbar></app-admin-navbar>
+      <div className="container-fluid">
+        <div class="container">
+          <mat-card>
+            <router-outlet></router-outlet>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+    <!-- Footer -->
+  </div>
+</div>

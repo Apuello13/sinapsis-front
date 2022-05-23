@@ -1,0 +1,34 @@
+<app-admin-header
+  [title]="'Productos'"
+  [buttonText]="'Crear'"
+  (click)="goForm()"
+></app-admin-header>
+<table class="table mt-4">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Precio</th>
+      <th>Impuesto</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products">
+      <td>{{ product.name }}</td>
+      <td>{{ product.price | currency }}</td>
+      <td>{{ product.taxes | percent }}</td>
+      <td>
+        <i
+          class="bx bx-pencil mr-3 text-primary pointer"
+          routerLink="/admin/product/form"
+          [queryParams]="{ productId : product.id }"
+          (click)="setProduct(product)"
+        ></i>
+        <i
+          class="bx bxs-trash-alt text-danger pointer"
+          (click)="delete(product.id)"
+        ></i>
+      </td>
+    </tr>
+  </tbody>
+</table>

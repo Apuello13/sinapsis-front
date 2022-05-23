@@ -1,0 +1,37 @@
+<form [formGroup]="searchForm" (ngSubmit)="search()">
+  <div class="d-flex justify-content-center align-items-center">
+    <div class="container-input shadow-sm">
+      <input type="text" formControlName="name" placeholder="Escribe aqui..." />
+      <button type="submit" class="btn">Buscar</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-2">
+      <span (click)="resetForm()" class="pointer clear">Limpiar filtros</span>
+      <h5 class="sub-title mt-3">Filtros</h5>
+      <h6 class="mt-4">Categorias</h6>
+      <ul>
+        <li
+          *ngFor="let category of categories"
+          class="pointer"
+          (click)="setValueForm(category.idCategory, 'categoryId')"
+        >
+          {{ category.name }}
+        </li>
+      </ul>
+      <h6 class="mt-4">Marcas</h6>
+      <ul>
+        <li
+          *ngFor="let mark of marks"
+          class="pointer"
+          (click)="setValueForm(mark.idMark, 'typeId')"
+        >
+          {{ mark.name }}
+        </li>
+      </ul>
+    </div>
+    <div class="col-10">
+        <app-grid-product [products]="products"></app-grid-product>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,28 @@
+<app-admin-header
+  [title]="'Marcas'"
+  [buttonText]="'Crear'"
+  (click)="openDialog()"
+></app-admin-header>
+<table class="table mt-4">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let mark of marks">
+      <td>{{ mark.name }}</td>
+      <td>
+        <i
+          class="bx bx-pencil mr-3 text-primary pointer"
+          (click)="openDialog(mark.idMark)"
+        ></i>
+        <i
+          class="bx bxs-trash-alt text-danger pointer"
+          (click)="delete(mark.idMark)"
+        ></i>
+      </td>
+    </tr>
+  </tbody>
+</table>

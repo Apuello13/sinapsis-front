@@ -1,0 +1,47 @@
+@import '../../../../assets/scss/variables.scss';
+
+header{
+    background: $ligthWhite;
+    padding: 2.2rem 7%;
+}
+
+.actions span{
+    margin: 0 0.3rem;
+}
+
+.menu{
+    margin-top: 1rem;
+}
+
+.menu ul{
+    display: contents;
+    list-style: none;
+}
+
+.menu ul li{
+    display: inline;
+    margin: 0 0.3rem;
+    padding-bottom: 0.4rem;
+    margin-right: 1rem;
+}
+
+.hero{
+    height: 25rem;
+    margin-top: 1.5rem;
+}
+
+.hero div{
+    width: 50%;
+}
+
+.hero .img-header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    padding: 1rem 2rem;
+    text-align: center;
+    color: $white;
+    height: 100%;
+    background: $ligthOrange;
+}

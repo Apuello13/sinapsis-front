@@ -1,0 +1,28 @@
+<app-admin-header
+  [title]="'Categorias'"
+  [buttonText]="'Crear'"
+  (click)="openDialog()"
+></app-admin-header>
+<table class="table mt-4">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let category of categories">
+      <td>{{ category.name }}</td>
+      <td>
+        <i
+          class="bx bx-pencil mr-3 text-primary pointer"
+          (click)="openDialog(category.idCategory)"
+        ></i>
+        <i
+          class="bx bxs-trash-alt text-danger pointer"
+          (click)="delete(category.idCategory)"
+        ></i>
+      </td>
+    </tr>
+  </tbody>
+</table>

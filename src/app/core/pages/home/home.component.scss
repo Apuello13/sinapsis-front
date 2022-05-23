@@ -1,0 +1,51 @@
+@import '../../../../assets/scss/variables.scss';
+
+.active{
+    border-width: 1px;
+    border-color: $ligthOrange;
+    width: auto;
+    padding: 0.5rem;
+    display: inline;
+    margin: 0 1rem;  
+}
+
+.category-container{
+    padding: 0 10%;
+    text-align: center;
+}
+
+.hero{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: $ligthOrange;
+    border-radius: 1rem;
+    border-bottom-right-radius: 0;
+    padding: 2rem 1rem;
+
+    img{
+        width: 40%;
+        height: 70%;
+    }
+}
+
+.btn{
+    border: 1px solid $white;
+}
+
+
+.card{
+    border: 0;
+    border-radius: 1rem;
+    padding: 1rem;
+    text-align: start;
+    .card-body{
+        margin-top: 0.5rem;
+    }
+    .img{
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        background: $ligthWhite;
+    }
+}

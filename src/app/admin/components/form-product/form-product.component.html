@@ -1,0 +1,82 @@
+<app-admin-header
+  [title]="'Formulario de producto'"
+  [buttonText]="'Crear'"
+  (click)="goProduct()"
+></app-admin-header>
+<form [formGroup]="productForm" (ngSubmit)="save()">
+  <div class="row">
+    <div class="col-12">
+      <div class="form-group">
+        <label>Nombre</label>
+        <input type="text" formControlName="name" class="form-control" />
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="form-group">
+        <label>Marca</label>
+        <select formControlName="idMark" class="form-control">
+          <option value="">Seleccione...</option>
+          <option *ngFor="let mark of marks" [value]="mark.idMark">
+            {{ mark.name }}
+          </option>
+        </select>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="form-group">
+        <label>Categoria</label>
+        <select formControlName="idCategory" class="form-control">
+          <option value="">Seleccione...</option>
+          <option
+            *ngFor="let category of categories"
+            [value]="category.idCategory"
+          >
+            {{ category.name }}
+          </option>
+        </select>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="form-group">
+        <label>Precio</label>
+        <input type="text" formControlName="price" class="form-control" />
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="form-group">
+        <label>Impuestos</label>
+        <input type="text" formControlName="taxes" class="form-control" />
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="form-group">
+        <label>Fecha de vencimiento</label>
+        <input type="date" formControlName="dateExpiry" class="form-control" />
+      </div>
+    </div>
+    <div class="col-12">
+      <div class="form-group">
+        <label>Descripción</label>
+        <textarea type="text" formControlName="description" class="form-control"></textarea>
+      </div>
+    </div>
+    <div class="col-12">
+      <div class="d-flex align-items-center justify-content-between">
+        <button
+          type="button"
+          routerLink="/admin/product"
+          class="btn btn-danger"
+        >
+          Cancelar
+        </button>
+        <button
+          type="submit"
+          class="btn btn-primary"
+          [disabled]="productForm.invalid"
+        >
+          Guardar
+        </button>
+      </div>
+    </div>
+  </div>
+</form>
